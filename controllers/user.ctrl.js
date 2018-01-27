@@ -20,7 +20,8 @@ module.exports.oauthCallback = function(strategy) {
 			if (err || !user) {
 				return res.redirect('/');
 			}
-			res.cookie('user',user, { maxAge: 900000, httpOnly: true });
+			console.log(user);
+			res.cookie('user', user);
 
 			return res.redirect('/#/home');
 			
